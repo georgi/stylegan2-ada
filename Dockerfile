@@ -10,6 +10,7 @@
 ARG BASE_IMAGE=tensorflow/tensorflow:1.14.0-gpu-py3 
 FROM $BASE_IMAGE
 
+RUN apt-get update
 RUN apt-get -y install nvidia-cuda-dev nvidia-cuda-toolkit
 
 RUN pip install scipy==1.3.3
