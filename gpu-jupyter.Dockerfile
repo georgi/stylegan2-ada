@@ -7,13 +7,13 @@
 # license agreement from NVIDIA CORPORATION is strictly prohibited.
 
 # ARG BASE_IMAGE=nvcr.io/nvidia/tensorflow:20.10-tf1-py3
-ARG BASE_IMAGE=tensorflow/tensorflow:1.14.0-gpu-jupyter
+ARG BASE_IMAGE=tensorflow/tensorflow:1.14.0-gpu-py3-jupyter
 FROM $BASE_IMAGE
 
 RUN apt-get update
 RUN apt-get -y install nvidia-cuda-dev nvidia-cuda-toolkit
 
-RUN pip install scipy
+RUN pip install scipy==1.3.3
 RUN pip install requests==2.22.0
 RUN pip install Pillow==6.2.1
 RUN pip install h5py==2.9.0
